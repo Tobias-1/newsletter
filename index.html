@@ -3,28 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flight Sim Alerts – Fly Smart, Fly Safe</title>
-
+  <title>Flight Sim Alerts</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: #0a0f1a url('https://images.unsplash.com/photo-1549921296-3a6b3c8d4c3a?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: #0a0f1a;
       font-family: 'Inter', sans-serif;
       color: #ffffff;
     }
 
     .overlay {
-      background: rgba(10, 15, 26, 0.85);
-      min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       padding: 40px 20px;
+      background: rgba(10, 15, 26, 0.85);
     }
 
     .form-box {
@@ -34,55 +30,56 @@
       padding: 48px;
       border-radius: 18px;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-      text-align: left;
-      transition: all 0.3s ease;
     }
 
-    .form-box h1 {
+    h1 {
       font-size: 32px;
-      font-weight: 700;
       margin-bottom: 20px;
     }
 
-    .form-box p {
+    p {
       font-size: 16px;
       color: #cbd5e1;
       margin-bottom: 32px;
       line-height: 1.6;
     }
 
-    #sib-container {
-      background-color: transparent !important;
-      color: #fff !important;
+    .input-group {
+      margin-bottom: 24px;
     }
 
-    #sib-form .entry__field input {
-      background-color: #0f172a !important;
-      border: 1px solid #334155 !important;
-      color: #ffffff !important;
-      border-radius: 10px !important;
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #e2e8f0;
     }
 
-    #sib-form .entry__label {
-      color: #e2e8f0 !important;
-      font-family: 'Inter', sans-serif !important;
-    }
-
-    #sib-form .sib-form-block__button {
-      background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
-      border: none !important;
-      border-radius: 10px !important;
-      font-size: 16px !important;
-      font-weight: 600 !important;
-      font-family: 'Inter', sans-serif !important;
-      color: #ffffff !important;
-      padding: 16px;
+    input[type="text"],
+    input[type="email"] {
       width: 100%;
-      cursor: pointer;
+      padding: 14px 16px;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 15px;
     }
 
-    #sib-form .sib-form-block__button:hover {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
     }
 
     .footer-text {
@@ -92,11 +89,14 @@
       text-align: center;
     }
 
-    @media (max-width: 480px) {
-      .form-box {
-        padding: 32px 24px;
-      }
+    .success, .error {
+      padding: 12px;
+      margin-top: 20px;
+      border-radius: 8px;
     }
+
+    .success { background: #16a34a; color: #ffffff; }
+    .error { background: #dc2626; color: #ffffff; }
   </style>
 </head>
 <body>
@@ -105,49 +105,68 @@
       <h1>Flight Sim Alerts</h1>
       <p>Erhalte Warnungen wie von einem echten Co-Piloten: Mit dem SimulationNotifier & CSEA bleibst du bei jedem virtuellen Flug sicher informiert und kannst schnell reagieren.</p>
 
-      <!-- Brevo Formular START -->
-      <div class="sib-form" style="text-align: left;">
-        <div id="sib-container" class="sib-container--large sib-container--vertical">
-          <form id="sib-form" method="POST" action="https://fbfd49bf.sibforms.com/serve/MUIFAPVl6XE24jKacEAUchzQoPlpGceXCSVnUocFRIZUicCBRGMYDdY65VyALaiwj1rjJculspubYW8zhQ4MJAhzGnjizpr7kbGijQieuqHFsV3rgqd-YP7xyIiZMahfWw-LYhiMK-hPjG0yXLpNnE29SWyGZ3555ZET9JtWzaadkhYr_AmbZGelnmyRwwMEvgtlrN2Fd7RiARPS" data-type="subscription">
-
-            <div class="sib-input sib-form-block">
-              <div class="form__entry entry_block">
-                <label class="entry__label" for="EMAIL">E-Mail-Adresse *</label>
-                <div class="entry__field">
-                  <input class="input" type="email" id="EMAIL" name="EMAIL" placeholder="pilot@fsa.com" required />
-                </div>
-              </div>
-            </div>
-
-            <div class="sib-input sib-form-block">
-              <div class="form__entry entry_block">
-                <label class="entry__label" for="CALLSIGN">Callsign</label>
-                <div class="entry__field">
-                  <input class="input" type="text" id="CALLSIGN" name="CALLSIGN" placeholder="z. B. SIMN-Tobias" />
-                </div>
-              </div>
-            </div>
-
-            <div class="sib-form-block" style="margin-top: 20px;">
-              <label><input type="checkbox" required /> Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>.</label>
-            </div>
-
-            <div class="sib-form-block" style="margin-top: 20px;">
-              <button class="sib-form-block__button" type="submit">Jetzt registrieren & Alerts erhalten</button>
-            </div>
-
-            <input type="text" name="email_address_check" value="" style="display:none;">
-            <input type="hidden" name="locale" value="de">
-          </form>
+      <form id="brevoForm">
+        <div class="input-group">
+          <label for="email">E-Mail-Adresse</label>
+          <input type="email" id="email" name="email" placeholder="pilot@fsa.com" required>
         </div>
-      </div>
-      <!-- Brevo Formular ENDE -->
+
+        <div class="input-group">
+          <label for="callsign">Call-Sign</label>
+          <input type="text" id="callsign" name="callsign" placeholder="z. B. SIMN-Tobias">
+        </div>
+
+        <div class="input-group">
+          <label><input type="checkbox" id="privacy" required> Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>.</label>
+        </div>
+
+        <button type="submit">Jetzt registrieren & Alerts erhalten</button>
+
+        <div id="responseMessage"></div>
+      </form>
 
       <p class="footer-text">Keine Turbulenzen durch Spam. Nur präzise Sicherheitshinweise für dein virtuelles Cockpit.</p>
     </div>
   </div>
 
-  <!-- Brevo JavaScript -->
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  <script>
+    document.getElementById('brevoForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const callsign = document.getElementById('callsign').value;
+      const responseBox = document.getElementById('responseMessage');
+
+      responseBox.innerHTML = '';
+
+      try {
+        const res = await fetch('https://api.brevo.com/v3/contacts', {
+          method: 'POST',
+          headers: {
+            'api-key': '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',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email,
+            attributes: { CALLSIGN: callsign },
+            listIds: [12, 7],
+            updateEnabled: true
+          })
+        });
+
+        if (res.ok) {
+          responseBox.innerHTML = '<div class="success">Erfolgreich registriert. Willkommen an Bord!</div>';
+          document.getElementById('brevoForm').reset();
+        } else {
+          const error = await res.json();
+          console.warn(error);
+          responseBox.innerHTML = '<div class="error">Registrierung fehlgeschlagen. Bitte prüfe deine Angaben.</div>';
+        }
+      } catch (err) {
+        console.error(err);
+        responseBox.innerHTML = '<div class="error">Verbindungsfehler. Bitte später erneut versuchen.</div>';
+      }
+    });
+  </script>
 </body>
 </html>
