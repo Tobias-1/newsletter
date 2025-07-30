@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Flight Sim Alerts – Fly Smart, Fly Safe</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
   <style>
     body {
@@ -39,7 +41,6 @@
     .form-box h1 {
       font-size: 32px;
       font-weight: 700;
-      color: #ffffff;
       margin-bottom: 20px;
     }
 
@@ -50,54 +51,38 @@
       line-height: 1.6;
     }
 
-    .input-group {
-      margin-bottom: 24px;
+    #sib-container {
+      background-color: transparent !important;
+      color: #fff !important;
     }
 
-    .input-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 14px;
-      color: #e2e8f0;
+    #sib-form .entry__field input {
+      background-color: #0f172a !important;
+      border: 1px solid #334155 !important;
+      color: #ffffff !important;
+      border-radius: 10px !important;
     }
 
-    .input-group input[type="text"],
-    .input-group input[type="email"] {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1px solid #334155;
-      border-radius: 10px;
-      background: #0f172a;
-      color: #ffffff;
-      font-size: 15px;
-      transition: border-color 0.2s;
+    #sib-form .entry__label {
+      color: #e2e8f0 !important;
+      font-family: 'Inter', sans-serif !important;
     }
 
-    .input-group input[type="text"]:focus,
-    .input-group input[type="email"]:focus {
-      border-color: #3b82f6;
-      outline: none;
-    }
-
-    .input-group input[type="checkbox"] {
-      margin-right: 8px;
-    }
-
-    .submit-btn {
-      width: 100%;
+    #sib-form .sib-form-block__button {
+      background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+      border: none !important;
+      border-radius: 10px !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      font-family: 'Inter', sans-serif !important;
+      color: #ffffff !important;
       padding: 16px;
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
-      color: #ffffff;
-      font-weight: 600;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
+      width: 100%;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
-    .submit-btn:hover {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    #sib-form .sib-form-block__button:hover {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
     }
 
     .footer-text {
@@ -105,11 +90,6 @@
       color: #94a3b8;
       margin-top: 36px;
       text-align: center;
-    }
-
-    a {
-      color: #60a5fa;
-      text-decoration: underline;
     }
 
     @media (max-width: 480px) {
@@ -125,34 +105,49 @@
       <h1>Flight Sim Alerts</h1>
       <p>Erhalte Warnungen wie von einem echten Co-Piloten: Mit dem SimulationNotifier & CSEA bleibst du bei jedem virtuellen Flug sicher informiert und kannst schnell reagieren.</p>
 
-      <!-- ✨ Brevo-Formular im eigenen Design -->
-      <form id="sib-form" method="POST" action="https://fbfd49bf.sibforms.com/serve/MUIFAPVl6XE24jKacEAUchzQoPlpGceXCSVnUocFRIZUicCBRGMYDdY65VyALaiwj1rjJculspubYW8zhQ4MJAhzGnjizpr7kbGijQieuqHFsV3rgqd-YP7xyIiZMahfWw-LYhiMK-hPjG0yXLpNnE29SWyGZ3555ZET9JtWzaadkhYr_AmbZGelnmyRwwMEvgtlrN2Fd7RiARPS" data-type="subscription">
-        <div class="input-group">
-          <label for="EMAIL">E-Mail-Adresse</label>
-          <input type="email" id="EMAIL" name="EMAIL" placeholder="pilot@fsa.com" required />
+      <!-- Brevo Formular START -->
+      <div class="sib-form" style="text-align: left;">
+        <div id="sib-container" class="sib-container--large sib-container--vertical">
+          <form id="sib-form" method="POST" action="https://fbfd49bf.sibforms.com/serve/MUIFAPVl6XE24jKacEAUchzQoPlpGceXCSVnUocFRIZUicCBRGMYDdY65VyALaiwj1rjJculspubYW8zhQ4MJAhzGnjizpr7kbGijQieuqHFsV3rgqd-YP7xyIiZMahfWw-LYhiMK-hPjG0yXLpNnE29SWyGZ3555ZET9JtWzaadkhYr_AmbZGelnmyRwwMEvgtlrN2Fd7RiARPS" data-type="subscription">
+
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <label class="entry__label" for="EMAIL">E-Mail-Adresse *</label>
+                <div class="entry__field">
+                  <input class="input" type="email" id="EMAIL" name="EMAIL" placeholder="pilot@fsa.com" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <label class="entry__label" for="CALLSIGN">Callsign</label>
+                <div class="entry__field">
+                  <input class="input" type="text" id="CALLSIGN" name="CALLSIGN" placeholder="z. B. SIMN-Tobias" />
+                </div>
+              </div>
+            </div>
+
+            <div class="sib-form-block" style="margin-top: 20px;">
+              <label><input type="checkbox" required /> Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>.</label>
+            </div>
+
+            <div class="sib-form-block" style="margin-top: 20px;">
+              <button class="sib-form-block__button" type="submit">Jetzt registrieren & Alerts erhalten</button>
+            </div>
+
+            <input type="text" name="email_address_check" value="" style="display:none;">
+            <input type="hidden" name="locale" value="de">
+          </form>
         </div>
-
-        <div class="input-group">
-          <label for="CALLSIGN">Call-Sign</label>
-          <input type="text" id="CALLSIGN" name="CALLSIGN" placeholder="z. B. SIMN-Tobias" />
-        </div>
-
-        <div class="input-group">
-          <input type="checkbox" id="privacy" required />
-          <label for="privacy">Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>.</label>
-        </div>
-
-        <button class="submit-btn" type="submit">Jetzt registrieren & Alerts erhalten</button>
-
-        <input type="text" name="email_address_check" value="" style="display:none;">
-        <input type="hidden" name="locale" value="de">
-      </form>
+      </div>
+      <!-- Brevo Formular ENDE -->
 
       <p class="footer-text">Keine Turbulenzen durch Spam. Nur präzise Sicherheitshinweise für dein virtuelles Cockpit.</p>
     </div>
   </div>
 
-  <!-- Brevo-Script -->
+  <!-- Brevo JavaScript -->
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
